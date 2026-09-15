@@ -130,19 +130,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webki
 /* 23 how Paz is roasted */
 #c23{background:var(--milk);color:var(--black);justify-content:flex-start;padding-top:calc(52px + env(safe-area-inset-top,0px))}
 #c23 .sub{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.55;margin-top:6px}
-#c23 .chart{flex:1;position:relative;margin:12px 0 10px;perspective:900px}
+#c23 .chart{flex:none;height:min(46vh,400px);position:relative;margin:auto 0}
 #c23 .chart canvas{position:absolute;inset:0;width:100%;height:100%}
-#c23 .rtitle{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 6%;font-family:var(--title);font-size:clamp(36px,11.5vw,60px);line-height:1;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease;pointer-events:none}
-#c23 .rtitle.on{opacity:1;transform:none}
-#c23 .rtitle.drop{opacity:0;transform:translateY(80px);transition:opacity .5s cubic-bezier(.55,0,1,.55),transform .5s cubic-bezier(.55,0,1,.55)}
-#c23 .rcue{position:absolute;right:2px;bottom:15%;width:66%;text-align:right;font-family:var(--quote);font-style:italic;font-size:clamp(17px,5.3vw,24px);line-height:1.2;text-wrap:balance;opacity:0;transform:translateY(8px);transition:opacity .55s ease,transform .55s ease;pointer-events:none}
-#c23 .rcue.on{opacity:1;transform:none}
-#c23 .rend{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;pointer-events:none;transition:opacity 1.2s ease}
-#c23 .rend img{width:min(56vw,240px);opacity:0;transform-origin:50% 60%;filter:drop-shadow(0 18px 24px rgba(38,35,30,.22))}
-#c23 .rend.in img{animation:bagIn 1.2s cubic-bezier(.2,1.15,.35,1) forwards}
+#c23 .rbig{position:absolute;inset:0;display:flex;align-items:center;padding:0 2% 0 10%;font-family:var(--wide);font-weight:800;font-stretch:100%;font-size:clamp(26px,8.6vw,42px);line-height:1.02;letter-spacing:-.01em;text-shadow:0 0 6px var(--milk),0 0 14px var(--milk);opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease;pointer-events:none}
+#c23 .rbig.on{opacity:1;transform:none}
+#c23 .rtitle.drop{opacity:0;transform:translateY(70px);transition:opacity .4s cubic-bezier(.55,0,1,.55),transform .4s cubic-bezier(.55,0,1,.55)}
+#c23 .rend{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;perspective:900px;pointer-events:none;transition:opacity 1s ease}
+#c23 .rend img{width:min(82vw,360px);opacity:0;transform-origin:50% 60%;filter:drop-shadow(0 22px 28px rgba(38,35,30,.24))}
+#c23 .rend.in img{animation:bagIn 1s cubic-bezier(.2,1.15,.35,1) forwards}
 @keyframes bagIn{0%{opacity:0;transform:translateY(-55%) rotateY(210deg) scale(.55)}50%{opacity:1;transform:translateY(6%) rotateY(-14deg) scale(1.05)}72%{transform:translateY(-3%) rotateY(5deg) scale(.985)}88%{transform:translateY(1%) rotateY(-1deg)}100%{opacity:1;transform:none}}
-#c23 .rname{font-family:var(--title);font-size:clamp(42px,14vw,68px);line-height:1;opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
-#c23 .rbrand{font-family:var(--wide);font-stretch:125%;font-weight:600;font-size:11px;letter-spacing:.34em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease}
+#c23 .rname{font-family:var(--title);font-size:clamp(48px,16vw,80px);line-height:1;opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+#c23 .rbrand{font-family:var(--wide);font-stretch:125%;font-weight:600;font-size:12px;letter-spacing:.34em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
 #c23 .rend.name .rname{opacity:1;transform:none}
 #c23 .rend.brand .rbrand{opacity:1;transform:none}
 #c23 .rend.out{opacity:0}
@@ -369,14 +367,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webki
 </section>
 
 <section class="card q" id="c23">
-  <div class="eyebrow">Quiet look <b>· a real roast, narrated · 12× speed</b></div>
+  <div class="eyebrow">Quiet look <b>· a real roast · 25× speed</b></div>
   <div class="sub">Paz · 30 kg · Giesen W30A · 3 Sept 2026 · 12:38 · DTR 24%</div>
   <div class="chart"><canvas id="roast"></canvas>
-    <div class="rtitle" id="rTitle">How Paz is roasted</div>
-    <div class="rcue" id="rCue"></div>
-    <div class="rend" id="rEnd"><img src="img/bag-paz.webp" alt=""><div class="rname">Paz</div><div class="rbrand">Coffee &amp; Coconuts</div></div>
+    <div class="rbig rtitle" id="rTitle">How Paz is roasted</div>
+    <div class="rbig" id="rCue"></div>
   </div>
-  <p class="cap" style="font-size:12px">The actual curve from Giesen Cloud, with the roaster talking you through it. Screen by the roaster, or a story the day a new lot drops.</p>
+  <p class="cap" style="font-size:12px">The real curve, straight from Giesen Cloud. For the screen by the roaster, or a story the day a new lot drops.</p>
+  <div class="rend" id="rEnd"><img src="img/bag-paz.webp" alt=""><div class="rname">Paz</div><div class="rbrand">Coffee &amp; Coconuts</div></div>
 </section>
 
 <section class="card q" id="c24">
@@ -699,30 +697,29 @@ const roast=cv2('roast');let roastT0=0;
 const PAZ=[[0,195.3],[3,195.6],[7,195.8],[12,194.7],[17,188.6],[22,178.3],[26,168.2],[31,155.9],[36,144.4],[41,134.1],[46,125.1],[50,118.5],[55,111.9],[60,106.5],[65,101.9],[69,99.1],[74,96.2],[79,94],[84,92.4],[89,91.3],[93,90.8],[98,90.3],[103,90.2],[108,90.3],[113,90.6],[117,91],[122,91.7],[127,92.5],[132,93.3],[136,94.1],[141,95.1],[146,96.2],[151,97.3],[156,98.5],[160,99.5],[165,100.7],[170,101.9],[175,103.2],[180,104.5],[184,105.5],[189,106.7],[194,108.1],[199,109.4],[203,110.4],[208,111.7],[213,113],[218,114],[223,115.2],[227,116.3],[232,117.6],[237,118.8],[242,120.2],[247,121.4],[251,122.5],[256,123.7],[261,125],[266,126.2],[270,127.2],[275,128.5],[280,129.7],[285,130.9],[290,132.1],[294,133.1],[299,134.3],[304,135.4],[309,136.6],[314,137.8],[318,138.7],[323,139.9],[328,141],[333,142.1],[337,143],[342,144.1],[347,145],[352,146],[357,147.1],[361,148],[366,149.1],[371,150.1],[376,151.2],[381,152.3],[385,153.1],[390,154.2],[395,155.3],[400,156.4],[404,157.2],[409,158.3],[414,159.3],[419,160.3],[424,161.4],[428,162.2],[433,163.2],[438,164.3],[443,165.4],[447,166.2],[452,167.3],[457,168.3],[462,169.3],[467,170.4],[471,171.1],[476,172],[481,173],[486,174],[491,175],[495,175.7],[500,176.7],[505,177.6],[510,178.6],[514,179.4],[519,180.3],[524,181.2],[529,182.2],[534,183.1],[538,183.8],[543,184.7],[548,185.5],[553,186.3],[558,187.1],[562,187.7],[567,188.4],[572,189.1],[577,189.9],[581,190.4],[586,191.2],[591,191.9],[596,192.4],[601,193],[605,193.6],[610,194.2],[615,194.8],[620,195.4],[625,195.9],[629,196.3],[634,196.8],[639,197.3],[644,197.8],[648,198.1],[653,198.6],[658,199],[663,199.4],[668,199.8],[672,200.1],[677,200.5],[682,200.8],[687,201.2],[692,201.6],[696,201.9],[701,202.3],[706,202.7],[711,203.1],[715,203.5],[720,203.9],[725,204.4],[730,204.8],[735,205.2],[739,205.7],[744,206.2],[749,206.7],[754,207.3],[758,207.7]];/* [seconds, °C] */
 const PZ={dur:758,tp:108,mai:418,fc:579,pow:[[7,100],[457,70],[524,10],[663,20]]};
 function pazT(s){if(s<=0)return PAZ[0][1];for(let i=1;i<PAZ.length;i++){if(PAZ[i][0]>=s){const [a,va]=PAZ[i-1],[b,vb]=PAZ[i];return va+(vb-va)*(s-a)/(b-a)}}return PAZ[PAZ.length-1][1]}
-const R_CS=3,R_SPEED=PZ.dur/60,R_END=R_CS+60,R_BAG=R_END+6.5,R_CYCLE=R_BAG+13;
+const R_CS=2,R_SPEED=PZ.dur/30,R_END=R_CS+30,R_BAG=38,R_CYCLE=46;
 const R_CUES=[/* [from, to, text] in card seconds; the curve runs R_CS..R_END */
-  [3.6,10.4,'The drum is at 195°. Thirty kilos of green coffee go in, and the temperature drops, fast.'],
-  [11.6,18.6,'Turning point. Now the beans climb. The moisture inside them heats up and starts to evaporate.'],
-  [21,30,'Drying. Green turns to yellow, and the roastery smells like hay.'],
-  [36.2,41,'Now the Maillard phase. Sugars caramelise. Colour and body are being built.'],
-  [41.6,47.6,'We slow the roast down here, to stretch out the development time.'],
-  [49,55.4,'First crack. The beans give a little snap as they swell under the pressure of the gases inside.'],
-  [56.2,61.4,'We roast Paz a touch darker than most of our coffees. It\u2019s still not very dark.'],
-  [R_END+.6,R_END+5.8,'There. The perfect end point, for a coffee that\u2019s full-bodied, chocolatey and sweet.']];
+  [2.4,6.0,'Temperature drops rapidly as raw coffee enters the roasting drum.'],
+  [6.6,12.4,'Temperature climbs. Moisture in the beans heats and begins to evaporate.'],
+  [16.6,20.2,'Now we enter the Maillard phase. Sugars are caramelizing. Body is being developed.'],
+  [20.6,24.6,'We slow the roast down here to extend development time.'],
+  [25.0,29.4,'First crack! Beans give off a little cracking sound as they expand under the pressure of expanding gases.'],
+  [29.8,33.6,'We roast Paz a touch darker than most of our coffees, but it\u2019s still not very dark.'],
+  [34.0,37.4,'There. The perfect end point, for a coffee that\u2019s full-bodied, chocolatey, and sweet.']];
 const rTitle=document.getElementById('rTitle'),rCue=document.getElementById('rCue'),rEnd=document.getElementById('rEnd');let rCueIdx=-1;
 function roastDraw(t){const {ctx,cv}=roast,W=cv.width,H=cv.height,dpr=devicePixelRatio;const el=(t-roastT0)%R_CYCLE;
   /* title: in, hold, drop away */
-  rTitle.classList.toggle('on',el<2.5);rTitle.classList.toggle('drop',el>=2.5&&el<4);
+  rTitle.classList.toggle('on',el<1.3);rTitle.classList.toggle('drop',el>=1.3&&el<2.4);
   /* narration */
   let ci=-1;for(let i=0;i<R_CUES.length;i++)if(el>=R_CUES[i][0]&&el<R_CUES[i][1]){ci=i;break}
   if(ci!==rCueIdx){rCueIdx=ci;if(ci>=0)rCue.textContent=R_CUES[ci][2];rCue.classList.toggle('on',ci>=0)}
   /* ending: bag flips in, name, brand, then everything fades */
-  rEnd.classList.toggle('in',el>=R_BAG);rEnd.classList.toggle('name',el>=R_BAG+1.3);rEnd.classList.toggle('brand',el>=R_BAG+2.1);rEnd.classList.toggle('out',el>=R_CYCLE-1.6);
-  const fade=el>=R_CYCLE-1.6?(el-(R_CYCLE-1.6))/1.4:0,dim=el>=R_BAG?Math.min(1,(el-R_BAG)/1.2)*.82:0;
+  rEnd.classList.toggle('in',el>=R_BAG);rEnd.classList.toggle('name',el>=R_BAG+1.0);rEnd.classList.toggle('brand',el>=R_BAG+1.6);rEnd.classList.toggle('out',el>=R_CYCLE-1.4);
+  const fade=el>=R_CYCLE-1.4?(el-(R_CYCLE-1.4))/1.2:0,dim=el>=R_BAG?Math.min(1,(el-R_BAG)/1)*.85:0;
   ctx.clearRect(0,0,W,H);ctx.globalAlpha=Math.max(0,1-fade)*(1-dim);
-  const L=34*dpr,R=W-10*dpr,Tp=14*dpr,B=H-26*dpr,TMAX=780;const X=s=>L+(R-L)*s/TMAX,Y=c=>B-(B-Tp)*(c-70)/(220-70);
+  const L=34*dpr,R=W-10*dpr,Tp=14*dpr,B=H-26*dpr,TMAX=780;const X=s=>L+(R-L)*s/TMAX,Y=c=>B-(B-Tp)*(c-80)/(215-80);
   ctx.strokeStyle='rgba(38,35,30,.14)';ctx.lineWidth=1*dpr;ctx.font=`${9*dpr}px Archivo,system-ui,sans-serif`;ctx.fillStyle='rgba(38,35,30,.55)';ctx.textAlign='right';
-  for(let c=80;c<=220;c+=20){ctx.beginPath();ctx.moveTo(L,Y(c));ctx.lineTo(R,Y(c));ctx.stroke();ctx.fillText(c+'°',L-6*dpr,Y(c)+3*dpr)}
+  for(let c=100;c<=200;c+=20){ctx.beginPath();ctx.moveTo(L,Y(c));ctx.lineTo(R,Y(c));ctx.stroke();ctx.fillText(c+'°',L-6*dpr,Y(c)+3*dpr)}
   ctx.textAlign='center';for(let m=0;m<=12;m+=2){ctx.beginPath();ctx.moveTo(X(m*60),Tp);ctx.lineTo(X(m*60),B);ctx.stroke();ctx.fillText(m+':00',X(m*60),B+14*dpr)}
   const sNow=Math.max(0,Math.min(PZ.dur,(el-R_CS)*R_SPEED));if(el<R_CS){ctx.globalAlpha=1;return}
   /* phase labels along the bottom, as each phase is entered */
@@ -743,7 +740,7 @@ function roastDraw(t){const {ctx,cv}=roast,W=cv.width,H=cv.height,dpr=devicePixe
   const mark=(s,label,dy)=>{if(sNow<s)return;const x=X(s),y=Y(pazT(s));ctx.strokeStyle='rgba(38,35,30,.5)';ctx.lineWidth=1*dpr;ctx.setLineDash([2*dpr,3*dpr]);ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y+dy);ctx.stroke();ctx.setLineDash([]);ctx.fillText(label,x+5*dpr,y+dy+(dy>0?10*dpr:-4*dpr))};
   mark(PZ.tp,'TURNING POINT 90°',30*dpr);mark(PZ.fc,'FIRST CRACK 9:39',-44*dpr);if(sNow>=PZ.dur){ctx.textAlign='right';mark(PZ.dur,'DROP 208°  ',-14*dpr);ctx.textAlign='left'}
   /* first crack: a soft pulse for a few seconds after */
-  const fcT=R_CS+PZ.fc/R_SPEED;if(el>fcT&&el<fcT+6){const a=(el-fcT)/6;ctx.fillStyle=`rgba(192,148,61,${(1-a)*.25})`;ctx.beginPath();ctx.arc(X(PZ.fc),Y(pazT(PZ.fc)),(6+a*30)*dpr,0,7);ctx.fill()}
+  const fcT=R_CS+PZ.fc/R_SPEED;if(el>fcT&&el<fcT+3){const a=(el-fcT)/3;ctx.fillStyle=`rgba(192,148,61,${(1-a)*.25})`;ctx.beginPath();ctx.arc(X(PZ.fc),Y(pazT(PZ.fc)),(6+a*30)*dpr,0,7);ctx.fill()}
   /* readout */
   ctx.textAlign='right';ctx.font=`${10*dpr}px 'Space Mono',monospace`;ctx.fillStyle='rgba(38,35,30,.7)';const mm=Math.floor(sNow/60),ss=Math.floor(sNow%60);ctx.fillText(`${mm}:${String(ss).padStart(2,'0')}  BT ${pazT(sNow).toFixed(1)}°`,R,Tp+10*dpr);
   ctx.globalAlpha=1}
